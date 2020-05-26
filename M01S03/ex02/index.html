@@ -7,7 +7,98 @@
   <body>
 
     <script>
+       var person = {
+        name: 'lina',
+        surname: 'no',
+        age: 21,
+        petOwner: false,
+        skills: {
+          html: true,
+          css: true,
+          javaScript: false
+        },
 
+        friends: {
+          rejina: {
+            name: 'rejina',
+            surname: 'mm',
+            age: 21
+          },
+
+          sophie: {
+            name: 'sophie',
+            surname: 'nob',
+            age: 20
+          },
+
+          nora: {
+            name: 'nora',
+            surname: 'bb',
+            age: 22
+          }
+        }
+      };
+
+     // console.log(person.friends.rejina);
+     // console.log(person.skills.javaScript);
+
+     console.warn('Afiseaza varsta prietenei sophie');
+     console.log(person.friends.sophie.age);
+
+     console.warn('Folosind anul curent calculeaza si afiseaza anul de nastere al lui rejina ');
+     console.log(2020 - person.friends.rejina.age)
+
+     console.warn('Calculeaza diferenta si afiseaza propozitia: “rejina este cu xx ani mai mare decat sophie.” folosind proprietatile name');
+     console.log(
+       person.friends.rejina.name + 
+       ' is ' + 
+       (person.friends.rejina.age - person.friends.sophie.age) + 
+       ' year/s older than ' + 
+       person.friends.sophie.name
+     );
+
+     console.warn('Afiseaza propozitia: “Prietenul meu sophie are xx ani” folosind doar proprietatile ');
+     console.log(
+       'my friend ' + 
+       person.friends.sophie.name + ' ' + person.friends.sophie.surname + 
+       ' is ' + person.friends.sophie.age + ' year. '
+     );
+
+     console.warn('Afiseaza propozitia: “Prietenii mei sunt: rejina, sophie si nora.')
+     console.log(
+       'my friends are: ' +
+       person.friends.rejina.name + ' , ' +
+       person.friends.sophie.name + ' and ' +
+       person.friends.nora.name + '.'
+     );
+
+     console.warn('Afiseaza numarul de caractere al numelui de familie al lui sophie');
+     console.log(person.friends.sophie.surname.length);
+
+     console.warn('Afiseaza varsta prietenei nora ');
+     console.log(person.friends.nora.age);
+
+     console.warn('Folosind anul curent calculeaza si afiseaza anul de nastere al lui sophie, apoi al lui nora.');
+     console.log(
+      2020 - person.friends.sophie.age,
+      2020 - person.friends.nora.age
+     );
+
+     console.warn('Calculeaza diferenta si afiseaza propozitia: “nora este cu xx ani mai mare decat sophie.” folosind proprietatile name.');
+     console.log(
+      person.friends.nora.name + ' is ' +
+      (person.friends.nora.age - person.friends.sophie.age) +
+      ' year/s older than ' + person.friends.sophie.name + '.'
+     );
+
+     console.warn('Afiseaza propozitia: “Prietena mea nora bb are xx ani.” folosind doar proprietatile.');
+     console.log(
+    'my friend ' + person.friends.nora.name + ' ' + 
+     person.friends.nora.surname + ' is ' + 
+     person.friends.nora.age + 
+     ' year.');
+
+     console.warn('')
     </script>
   </body>
 </html>
