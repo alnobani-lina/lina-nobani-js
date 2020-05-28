@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="message"></p>
+
+    <script>
+        var number = window.prompt('enter number:');
+        var messageElement = document.getElementById('message');
+        var message = '';
+
+        if (number > 20) {
+            message = 'the neumber is bigger than 20';
+        } else {
+            message = 'the number is lower than 20';
+        }
+
+        if (number == 20) {
+            message = 'the number is 20';
+        }
+
+        messageElement.innerText = message;
+
+    </script>
+</body>
+</html>

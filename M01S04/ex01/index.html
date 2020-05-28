@@ -5,9 +5,23 @@
     <title>Flow</title>
 </head>
 <body>
+    <p id="message"></p>
 
     <script>
+        var value = window.prompt('enter a value');
+        var messageElement = document.getElementById('message');
+        var message = '';
 
+        if (value % 2 === 0) {
+            message = 'the value is even';
+        } else {
+            message = 'the value is odd';
+        }
+
+        messageElement.innerText = message;
+
+
+        console.log(message);
     </script>
 </body>
 </html>
