@@ -72,3 +72,49 @@ var person = {
   });
 
   console.log(message);
+
+  console.warn('Using forEach, displays the total number of years that people in the friends array have, only if they are older than 30 inclusive.');
+  var totalAge = 0;
+
+  person.friends.forEach(function (friend) {
+    if (friend.age >= 30) {
+        totalAge += friend.age;
+    }
+  });
+
+  console.log(totalAge);
+
+  console.warn('Using forEach, displays the sum of the birth years of odd-numbered people.');
+  var totalYears = 0;
+
+  person.friends.forEach(function(friend){
+      var friendAge = friend.age;
+      var birthYear = (new Date(Date.now()).getFullYear()) - friendAge;
+
+      if (friendAge % 2 !== 0) {
+        totalYears += birthYear;
+      }
+  });
+
+  console.log(totalYears);
+
+  console.warn('Displays the age difference between the person and friends in the friends array if it is greater than or equal to 2 years.');
+  
+  person.friends.forEach(function(friend) {
+      var ageDiff = person.age - friend.age;
+
+      if (ageDiff >= 2) {
+          console.log(ageDiff);
+      }
+  });
+
+  console.warn('Display the phrase: "There is a difference of xx years between Dragos and Larry. Between Dragos and Steven ..."');
+  message = '';
+
+  person.friends.forEach(function(friend) {
+      var ageDiff = person.age - friend.age;
+
+      message += `intre ${person.name} si ${friend.name} este o diferenta de ${ageDiff} ani`;
+  });
+
+  console.log(message.trim);
