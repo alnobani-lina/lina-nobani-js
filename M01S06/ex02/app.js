@@ -1,28 +1,33 @@
-let paragraphElement = document.createElement('p'),
-userAgentSring = navigator.userAgent;
-message = 'nu stim';
-let browserName = 'browser';
-let userName = 'uu'
+let paragraphElement = document.createElement('p');
+let userAgentString = navigator.userAgent;
+let message = 'Nu stiu ce browser folosesti';
+let browserName = 'Browser';
+let userName = 'Username';
 
-if (Array.isArray(userAgentSring.match(/chrome/ig))) {
-    message = 'use chrome';
-    browserName = 'chrome';
+if (Array.isArray(userAgentString.match(/chrome/ig))) {
+  message = 'Navighezi folosind Chrome';
+  browserName = 'Chrome';
 }
-
-if (Array.isArray(userAgentSring.match(/firefox/ig))) {
-    message = 'use firefox';
-    browserName = 'firefox';
+if (Array.isArray(userAgentString.match(/firefox/ig))) {
+  message = 'Navighezi folosind Firefox';
+  browserName = 'Firefox';
 }
-
+if (Array.isArray(userAgentString.match(/Edge/.ig))) {
+  message = 'Navighezi folosind Microsoft Edge';
+  browserName = 'Microsoft Edge';
+}
 
 paragraphElement.innerText = message;
 
 document.body.appendChild(paragraphElement);
 
 setTimeout(() => {
-   userName = prompt(`${browserName} ...`)
-   let h1 = document.createElement('h1');
-   h1.innerText = userName;
+  userName = prompt(`${browserName} vrea sa stie cum te cheama`);
+  let h1 = document.createElement('h1'); 
+  h1.innerText = userName;
 
-   document.body.appendChild(h1);
-},3000);
+  document.body.appendChild(h1);
+  setTimeout(() => {
+    paragraphElement.remove();
+  }, 3000);
+}, 3000);
