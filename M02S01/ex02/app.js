@@ -15,7 +15,7 @@ class vehicle {
         this.topReverseSpeed = topReverseSpeed;
     }
     displaySpeed () {
-        console.log(`the current speed is`, this.speed);
+        console.log(`this machine ${this.make} color ${this.color} goes ${this.speed} km/h.`);
     }
 
     accelerate() {
