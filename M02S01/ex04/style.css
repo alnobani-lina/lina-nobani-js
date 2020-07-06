@@ -1,8 +1,6 @@
-
-
 .car {
- position: relative;
- background-color: #000;
+  position: relative;
+  background-color: #000;
 }
 
 .car__body {
@@ -26,7 +24,7 @@
 }
 
 .car__wheel {
-  position: absolute; 
+  position: absolute;
   bottom: -20px;
 }
 
@@ -58,10 +56,10 @@
 }
 
 .light {
-  position: absolute; 
+  position: absolute;
   width: 15px;
-  height: 15px; 
-  background-color: inherit; 
+  height: 15px;
+  background-color: #FFF;
   border-radius: 10px;
 }
 
@@ -81,11 +79,11 @@
   width: 200px;
   height: 200px;
   border: 1px solid #000;
-  position: relative; 
+  position: absolute;
 }
 
 .frame__car {
-   position: absolute; 
+  position: absolute;
   bottom: 70px;
   left: 10px;
 }
