@@ -1,10 +1,36 @@
-let words = ['spinach'];
+let  words = {
+  TVShowes: ['friends','bigbang','himym','brooklyn99','lost','lastship','lacasadepapel','sherlock'],
+  songs: ['courtesycall', 'monster', 'roses', 'mydemons', 'demons'],
+  anime: ['hxh', 'naruto' , 'deathnote' ,'tokyoghoul' , 'fmb']
+}
+let allKeys = Object.keys(words);
+let randomPropNumber = Math.floor(Math.random() * allKeys.length);
+let randomPropName = allKeys[randomPropNumber];
+let randomPropValue = words[randomPropName];
+let randomValueNumber = Math.floor(Math.random() * randomPropValue.length);
+let randomValueValue = randomPropValue[randomValueNumber];
+let category = document.querySelector(" .category ")
+category.innerHTML = `${randomPropName}`;
+
 let tries = 5;
 let word = words[0];
 let guesedLetters = [];
 let gameEnded = false;
 let wordGuesed = false;
 let keyboard = document.querySelector('.keyboard');
+let next = document.querySelector('.btn-primary');
+let reset = document.querySelector('.btn-danger');
+
+
+reset.addEventListener('click', () => {
+  location.reload();
+})
+
+next.addEventListener('click' , () => {
+  location.reload();
+})
+
+
 
 let renderTries = () => {
   let triesElement = document.getElementById('js-tries');
@@ -14,11 +40,11 @@ let renderTries = () => {
 
 let renderWord = () => {
   let wordContainerElement = document.getElementById('js-word');
-  let wordLength = word.length;
+  let wordLength = randomValueValue.length;
   let okIterationCount = 0;
   wordContainerElement.innerHTML = '';
 
-  word.split('').forEach((letter) => {
+  randomValueValue.split('').forEach((letter) => {
     let button = document.createElement('button');
     button.classList.add('btn', 'btn-lg', 'btn-secondary', 'm-1');
 
@@ -46,13 +72,13 @@ let checkGameState = () => {
   }
 
   if (wordGuesed) {
-    alert('Ai castigat');
+    alert('Great job!');
     return;
   }
 
   if (gameEnded) {
-    alert('Ai pierdut');
-    return;
+    alert(`Sorry you are wrong the word was  ${randomValueValue}`);
+    return location.reload();
   }
 };
 
@@ -94,9 +120,9 @@ keyboard.addEventListener('click', (event) => {
     // common action
     guesedLetters.push(letter);
     event.target.disabled = true;
+    console.log(letter)
 
-
-    if (word.includes(letter)) {
+    if (randomValueValue.includes(letter)) {
       event.target.classList.add('btn-success');
     } else {
       tries--;
@@ -109,4 +135,5 @@ keyboard.addEventListener('click', (event) => {
     renderFace();
   }
 });
+
 
