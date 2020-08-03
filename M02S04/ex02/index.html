@@ -9,6 +9,15 @@
         height: 100px; 
         border: 1px solid #000;
         transition: background-color 1s ease;
+        
+      }
+
+      .new-box {
+        width: 100px;
+        height: 100px; 
+        border: 1px solid #000;
+        transition: background-color 1s ease;
+        margin: 10px;
       }
 
     </style>
@@ -16,16 +25,24 @@
 <body>
   
   <div class="box"></div>
-
-  <button class="btn">black</button>
-  <button class="btn">gray</button>
-  <button class="btn">lightblue</button>
+  <button class="btn">Red</button>
+  <button class="btn">Green</button>
+  <button class="btn">Blue</button>
 
   <input type="color" id="color-input">
+  <button>Apply</button>
+  <button id="reset-bg">Reset</button>
 
-  <button>apply</button>
-
-  <button id="reset-bg"></button>
+  <div class="container">
+    <div class=" new-box first-box">
+      <input type="checkbox"  id="my-check">
+      <label for="first-box">Color me</label>
+    </div>
+    <div class=" new-box second-box">
+      <input type="checkbox"  id="second-check">
+      <label for="second-box">Color me</label>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>

@@ -1,0 +1,20 @@
+body, html, ul {
+    padding: 0;
+    margin: 0;
+}
+
+.glide {
+    position: relative;
+}
+
+.iimg {
+    width: 100%;
+    height: 653px;
+}
+
+.best {
+    margin-top: 500px;
+    margin-left: 100px;
+    position: absolute;
+    
+}
